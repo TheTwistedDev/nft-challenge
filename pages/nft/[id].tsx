@@ -106,9 +106,9 @@ function NFTDropPage({ collection }: Props) {
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
         <Toaster position="bottom-center"/>
         {/* Left */}
-        <div className="bg-gradient-to-br from-cyan-800 to-rose-500 lg:col-span-4">
+        <div className="bg-gradient-to-br from-amber-800 to-purple-500 lg:col-span-4">
             <div className="flex flex-col items-center justify-center py-2 lg:min-h-screen">
-                <div className="bg-gradient-to-br from-yellow-400 to-purple-600 p-2 rounded-xl">
+                <div className="bg-gradient-to-br from-blue-600 to-red-600 p-2 rounded-xl">
                     <img className="w-44 rounded-xl object-cover lg:h-96 lg:w-72" src={urlFor(collection.previewImage).url()} alt="" />
                 </div>
                 <div className="text-center p-5 space-y-2">
@@ -122,25 +122,25 @@ function NFTDropPage({ collection }: Props) {
             </div>
         </div>
         {/* Right */}
-        <div className="flex flex-1 flex-col p-12 lg:col-span-6">
+        <div className="flex flex-1 flex-col p-12 lg:col-span-6 bg-slate-700">
             {/* Header */}
-            <header className="flex items-center justify-between">
+            <header className="flex items-center justify-between text-slate-400">
                 <Link href={'/'}>
-                    <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
+                    <h1 className="w-52  cursor-pointer text-xl font-extralight sm:w-80">
                         The {' '} 
-                        <span className="font-extrabold underline decoration-pink-600/50">
+                        <span className="font-extrabold underline decoration-4 decoration-purple-500/40">
                             SocialMeaps
                         </span> {' '}
                         NFT Market Place
                     </h1>
                 </Link>
                 
-                <button onClick={() => address ? disconnect() : connectWithMetamask()} className="rounded-full bg-rose-400 text-white px-4 py-2 text-xs font-bold lg:px-5 lg:py-3 lg:text-base">
+                <button onClick={() => address ? disconnect() : connectWithMetamask()} className="rounded-full bg-amber-600 text-slate-200 px-4 py-2 text-xs font-bold lg:px-5 lg:py-3 lg:text-base">
                    { address ? 'Sign Out' : 'Sign In'}
                 </button>
             </header>
 
-            <hr className="my-2 border"/>
+            <hr className="my-2"/>
 
             {address && (
                 <p className=" text-center text-sm text-rose-400">  
@@ -153,11 +153,11 @@ function NFTDropPage({ collection }: Props) {
                     <img className="w-80 object-cover pb-10 lg:h-40" src={urlFor(collection.mainImage).url()} alt="" />
                     <h1 className="text-3xl font-bold lg:text-5xl font-extrabold">{collection.title} </h1>
                     {loading ? (
-                         <p className="pt-2 text-xl text-green-500 animate-pulse">
+                         <p className="pt-2 text-xl text-green-600 animate-pulse">
                              Loading Supply Count...
                          </p>
                     ) : (
-                        <p className="pt-2 text-xl text-green-500"> {claimedSupply} / {totalSupply?.toString()} NFT's claimed</p>
+                        <p className="pt-2 text-xl text-green-600"> {claimedSupply} / {totalSupply?.toString()} NFT's claimed</p>
                     )}
                     {loading && (
                         <img className="h-80 w-80 object-contain"src=" https://cdn.hackernoon.com/images/0*4Gzjgh9Y7Gu8KEtZ.gif" alt="" />
@@ -166,7 +166,7 @@ function NFTDropPage({ collection }: Props) {
             {/* Button */}
             <button disabled={loading || claimedSupply === totalSupply?.toNumber() || !address} 
             onClick={mintNft}
-            className="mt-10 h-16 w-full rounded-full bg-red-600 font-bold text-white disabled:bg-gray-400">
+            className="mt-10 h-16 w-full rounded-full bg-amber-600 font-bold text-white disabled:bg-gray-500">
                 {loading ? (
                     <>Loading</>
                 ) : claimedSupply === totalSupply?.toNumber() ? (

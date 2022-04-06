@@ -11,29 +11,29 @@ interface Props {
 
 const Home = ({ collections }: Props) => {
   return (
-    <div className="max-w-7xl flex flex-col min-h-screen py-20 px-10 2xl:px-0">
+    <div className="flex flex-col min-h-screen py-20 px-10 2xl:px-0 bg-slate-800">
       <Head>
         <title>NFT Drop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="mb-10 text-4xl font-extralight">
+      <h1 className="ml-4 mb-10 text-4xl font-extralight text-amber-700">
           The {' '} 
-          <span className="font-extrabold underline decoration-pink-600/50">
+          <span className="font-extrabold underline decoration-violet-600/50">
               SocialMeaps
           </span> {' '}
           NFT Market Place
       </h1>
 
-      <div className="mb-4 ml-4 w-fit ">
+      <div className="max-w-7xl m-4 p-2 border-solid rounded-md bg-slate-500">
         <Link href="/demo">
-          <h1 className=" text-blue-400 cursor-pointer "> Demo Instructions </h1>
+          <h1 className=" text-blue-300 cursor-pointer "> Demo Instructions </h1>
         </Link>
       </div>
       
 
-      <main className=" bg-slate-100 p-10 shadow-xl shadow-rose-400/20">
-        <div className="grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+      <main className=" max-w-7xl bg-slate-500 m-4 p-10 rounded-sm shadow-xl shadow-violet-400/20">
+        <div className="grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ">
           {collections.map((collection) => (
             <Link href={`/nft/${collection.slug.current}`}>
             <div className="flex flex-col items-center cursor-pointer transition-all duration-200 hover:scale-105">
